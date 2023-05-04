@@ -93,7 +93,7 @@ export default class SearchScreen extends Component {
 		if (enteredText[0] === 'B') {
 			let dbQuery = query(
 				collection(db, 'transactions'),
-				where('bookId', '==', text),
+				where('book_id', '==', text),
 				startAfter(this.state.lastVisibleTransaction),
 				limit(10)
 			);
@@ -109,7 +109,7 @@ export default class SearchScreen extends Component {
 		} else if (enteredText[0] === 'S') {
 			let dbQuery = query(
 				collection(db, 'transactions'),
-				where('bookId', '==', text),
+				where('student_id', '==', text),
 				startAfter(this.state.lastVisibleTransaction),
 				limit(10)
 			);
